@@ -1,0 +1,59 @@
+@use "@/scss/abstract/variables" as *;
+
+.btn {
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 99px;
+
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+.primary {
+  background: $grad-primary;
+  color: $clr-text-dark;
+  padding: 0.7rem 1.6rem;
+
+  &:hover {
+    box-shadow: 0 0 20px rgba($clr-primary, 0.3);
+  }
+}
+
+.reverse {
+  background: $grad-reverse;
+  color: $clr-text-dark;
+  padding: 0.7rem 1.6rem;
+}
+
+.outline {
+  background: transparent;
+  color: $clr-text-light;
+  border: 1px solid rgba($clr-text-light, 0.15);
+  padding: 0.7rem 1.6rem;
+
+  &:hover {
+    background: rgba($clr-text-light, 0.05);
+    border-color: rgba($clr-text-light, 0.3);
+  }
+}
+
+.icon {
+  background: $clr-nav-highlight;
+  color: $clr-text-light;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  padding: 0;
+
+  &:hover {
+    background: lighten($clr-nav-highlight, 5%);
+  }
+}

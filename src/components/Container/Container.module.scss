@@ -1,0 +1,38 @@
+@use "@/scss/abstract/variables" as *;
+
+.outerWrapper {
+  position: relative;
+  width: 100%;
+  padding-left: $space-md;
+  padding-right: $space-md;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: map-get($breakpoints, "sm")) {
+    padding-left: $space-xl;
+    padding-right: $space-xl;
+  }
+}
+
+.innerContent {
+  position: absolute;
+  z-index: 1;
+  max-width: $layout-max-width;
+  margin: 0 auto;
+}
+
+.gridLayer {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  pointer-events: none;
+  z-index: 0;
+  max-width: $layout-max-width;
+  margin: 0 auto;
+}
+
+.gridCell {
+  border-right: 1px solid $clr-grid;
+  border-bottom: 1px solid $clr-grid;
+  height: 100%;
+}

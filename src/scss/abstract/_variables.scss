@@ -1,0 +1,36 @@
+// colors
+$clr-primary: #7a87fb;
+$clr-secondary: #ffd49c;
+$clr-text-light: #ffffff;
+$clr-text-muted: rgba(255, 255, 255, 0.6);
+$clr-text-dark: #101111;
+$clr-bg-dark: #101111;
+$clr-nav-bg: #1c1c1c;
+$clr-nav-highlight: #292929;
+$clr-grid: rgba(255, 255, 255, 0.07);
+
+// gradients
+$grad-primary: linear-gradient(120deg, $clr-primary 0%, $clr-secondary 100%);
+$grad-reverse: linear-gradient(120deg, $clr-secondary 0%, $clr-primary 100%);
+
+// spacing system
+$space-xs: 0.25rem; // 4px
+$space-sm: 0.5rem; // 8px
+$space-md: 1rem; // 16px
+$space-lg: 1.5rem; // 24px
+$space-xl: 2rem; // 32px
+$space-xxl: 4rem; // 64px
+
+// layout
+$layout-max-width: 1280px;
+
+// animation/transition tokens
+$transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+$transition-bouncy: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+$breakpoints: (
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+);

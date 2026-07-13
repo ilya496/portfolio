@@ -1,4 +1,4 @@
-import Section from "../shared/ui/Section";
+import Section from "../components/Section";
 
 function AboutPage() {
   return (

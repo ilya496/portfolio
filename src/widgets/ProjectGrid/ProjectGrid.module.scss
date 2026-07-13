@@ -1,0 +1,86 @@
+@use "@/scss/abstract/variables" as *;
+@use "@/scss/abstract/mixins" as *;
+
+.sectionSpacing {
+  padding-top: $space-xxl;
+  padding-bottom: $space-xxl;
+  border-bottom: 1px solid $clr-grid;
+}
+
+.headerArea {
+  margin-bottom: $space-xxl;
+  max-width: 500px;
+}
+
+.sectionTitle {
+  color: $clr-text-light;
+  font-size: 2rem;
+  margin-bottom: $space-sm;
+  font-weight: 500;
+}
+
+.sectionSubtitle {
+  color: $clr-text-muted;
+  font-size: 0.95rem;
+}
+
+.responsiveGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-xl;
+
+  @include respond-to("md") {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to("lg") {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.thumbnailWrapper {
+  width: 100%;
+  height: 180px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin-bottom: $space-lg;
+
+  .img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: $transition-bounce;
+  }
+}
+
+.card:hover .img {
+  transform: scale(1.04);
+}
+
+.projectTitle {
+  color: $clr-text-light;
+  font-size: 1.2rem;
+  margin-bottom: $space-xs;
+}
+
+.projectDesc {
+  color: $clr-text-muted;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: $space-lg;
+}
+
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+}
+
+.tag {
+  background: $clr-nav-highlight;
+  color: rgba($clr-text-light, 0.8);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+}

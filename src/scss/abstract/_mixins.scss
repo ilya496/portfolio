@@ -1,0 +1,51 @@
+@use "./variables" as *;
+
+// media query
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+      + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+// flexbox
+@mixin flex-center($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin gradient-text {
+  background: $grad-primary;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@mixin section-grid-background($cols: 3, $rows: 2) {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+  grid-template-rows: repeat($rows, 1fr);
+  pointer-events: none;
+  z-index: -1;
+
+  & > div {
+    border-right: 1px solid $clr-grid;
+    border-bottom: 1px solid $clr-grid;
+
+    &:nth-child(#{$cols}n) {
+      border-right: none;
+    }
+
+    &:nth-last-child(-n + #{$cols}) {
+      border-bottom: none;
+    }
+  }
+}

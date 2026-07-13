@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 
-import Button from "../shared/ui/Button";
-import StyledCode from "../shared/ui/StyledCode";
+import Button from "@/components/Button/Button";
+import StyledCode from "@/components/StyledCode";
 
 function NotFoundPage() {
   const location = useLocation();
@@ -15,7 +15,7 @@ function NotFoundPage() {
           <StyledCode>{location.pathname}</StyledCode>
         </p>
         <Link to="/" className="section__link">
-          <Button variant="filled">Back to home</Button>
+          <Button>Back to home</Button>
         </Link>
       </div>
     </section>

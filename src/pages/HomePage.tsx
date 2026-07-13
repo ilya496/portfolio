@@ -1,5 +1,5 @@
-import Section from "../shared/ui/Section";
-import HeroSection from "../widgets/HeroSection";
+import Section from "../components/Section";
+import HeroSection from "../widgets/Hero/Hero";
 
 function HomePage() {
   return (
