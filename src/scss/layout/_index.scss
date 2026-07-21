@@ -4,5 +4,9 @@ Files inside this folder can contain specific element styles and layout.
 */
 
 //Import Layout files
+@forward "header";
 @forward "footer";
 @forward "not-found";
+@forward "container";
+@forward "home";
+@forward "fake-login";

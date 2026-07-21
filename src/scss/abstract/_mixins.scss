@@ -49,3 +49,9 @@
     }
   }
 }
+
+@mixin font($level, $weight: "regular", $lh: "normal") {
+  font-size: map-get($type-scale, $level);
+  font-weight: map-get($font-weights, $weight);
+  line-height: map-get($line-heights, $lh);
+}

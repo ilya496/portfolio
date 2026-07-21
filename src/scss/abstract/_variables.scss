@@ -24,7 +24,7 @@ $space-xxl: 4rem; // 64px
 // layout
 $layout-max-width: 1280px;
 
-// animation/transition tokens
+// animation/transition
 $transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 $transition-bouncy: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
@@ -33,4 +33,43 @@ $breakpoints: (
   "md": 768px,
   "lg": 992px,
   "xl": 1200px,
+);
+
+$font-sans:
+  "Poppins",
+  system-ui,
+  -apple-system,
+  sans-serif;
+$font-mono: "Fira Code", monospace;
+
+$type-scale: (
+  "xs": 0.75rem,
+  // 12px
+  "sm": 0.875rem,
+  // 14px
+  "base": 1rem,
+  // 16px
+  "h6": 1.25rem,
+  // 20px
+  "h5": 1.563rem,
+  // ~25px
+  "h4": 1.953rem,
+  // ~31px
+  "h3": 2.441rem,
+  // ~39px
+  "h2": 3.052rem,
+  // ~49px
+  "h1": 3.815rem // ~61px,
+);
+
+$font-weights: (
+  "regular": 400,
+  "medium": 500,
+  "bold": 700,
+);
+
+$line-heights: (
+  "tight": 1.2,
+  "normal": 1.5,
+  "relaxed": 1.75,
 );

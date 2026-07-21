@@ -1,0 +1,121 @@
+@use "../abstract" as *;
+
+.media-grid {
+  columns: 12.5rem;
+  column-gap: 1.25rem;
+  padding: 0;
+  margin-top: 1.5rem;
+  list-style: none;
+
+  &__item {
+    break-inside: avoid;
+    margin-bottom: 1.25rem;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background: none;
+
+    border: 1px solid var(--card-border, rgba(255, 255, 255, 0.12));
+    transition:
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+
+    &:hover {
+      border-color: var(--card-border-hover, rgba(255, 255, 255, 0.35));
+      box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &__button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover img,
+    &:focus-visible img {
+      transform: scale(1.03);
+    }
+  }
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  animation: lightboxFadeIn 0.2s ease-out;
+
+  &__close {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 1010;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      transform: scale(1.1);
+    }
+
+    &:focus-visible {
+      outline: 2px solid #ffffff;
+      outline-offset: 2px;
+    }
+  }
+
+  &__image {
+    min-width: min(550px, 75vw);
+    max-width: 85vw;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    display: block;
+    border-radius: 0.75rem;
+
+    border: 2px solid rgba(255, 255, 255, 0.2);
+
+    box-shadow:
+      0 0 0 1px rgba(0, 0, 0, 0.6),
+      0 1.5rem 3.5rem rgba(0, 0, 0, 0.85);
+
+    cursor: default;
+    user-select: none;
+  }
+}
+
+@keyframes lightboxFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

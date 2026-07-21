@@ -1,8 +1,103 @@
 @use "../abstract" as *;
 
 body {
-  font-family: "Poppins", sans-serif;
-  font-size: 1rem;
-  font-weight: normal;
-  line-height: 1.5;
+  font-family: $font-sans;
+  @include font("base", "regular", "normal");
+  color: $clr-text-light;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $clr-text-light;
+}
+
+h1 {
+  @include font("h1", "bold", "tight");
+}
+h2 {
+  @include font("h2", "bold", "tight");
+}
+h3 {
+  @include font("h3", "bold", "tight");
+}
+h4 {
+  @include font("h4", "medium", "normal");
+}
+h5 {
+  @include font("h5", "medium", "normal");
+}
+h6 {
+  @include font("h6", "medium", "normal");
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  @include font("base", "regular", "relaxed");
+}
+
+small,
+.text-sm {
+  @include font("sm", "regular", "normal");
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.section {
+  padding-block: 4rem;
+  position: relative;
+
+  &__header {
+    margin-bottom: 2.5rem;
+
+    &--center {
+      text-align: center;
+      margin-inline: auto;
+      max-width: 42rem;
+    }
+  }
+
+  &__subtitle {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    @include font("sm", "bold", "normal");
+    margin-bottom: 0.5rem;
+  }
+
+  &__title {
+    @include font("h2", "bold", "tight");
+    color: inherit;
+    margin-bottom: 0.75rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__text {
+    @include font("base", "regular", "relaxed");
+    max-width: 48rem;
+    margin-bottom: 0.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .section__header--center & {
+      margin-inline: auto;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+  }
 }

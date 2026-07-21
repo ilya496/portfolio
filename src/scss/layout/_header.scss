@@ -1,0 +1,89 @@
+@use "@/scss/abstract/variables" as *;
+
+.header {
+  width: 100%;
+  padding: 1.5rem 0;
+  position: relative;
+  z-index: 10;
+  background: transparent;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo__link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.nav {
+  background: transparent;
+  border: 1px solid $clr-grid;
+  border-radius: 99px;
+  padding: 0.35rem 1.5rem 0.35rem 0.5rem;
+}
+
+.nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav__item {
+  display: flex;
+  align-items: center;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: $clr-text-light;
+  font-size: 0.95rem;
+  font-weight: 400;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $clr-primary;
+  }
+}
+
+.home-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 50%;
+  border: 1px solid $clr-grid;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
+
+.home-icon {
+  width: 18px;
+  height: 18px;
+  opacity: 0.8;
+}
+
+.header__cta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  a {
+    text-decoration: none;
+  }
+}

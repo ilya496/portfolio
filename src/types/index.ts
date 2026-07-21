@@ -1,18 +1,27 @@
+export interface User {
+  id: string;
+  username: string;
+  createdAt: Date;
+}
+
 export interface Project {
   id: string;
   title: string;
   description: string;
-  thumbnailUrl: string;
-  tags: string[];
-  liveUrl?: string;
-  githubUrl?: string;
+  url?: string;
+  repoUrl?: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
-export interface ServiceItem {
+export type ServiceStatus = "ACTIVE" | "INACTIVE" | "BETA";
+
+export interface Service {
   id: string;
   title: string;
   description: string;
-  icon?: string;
-  externalLink: string;
-  status: "active" | "maintenance" | "beta";
+  url: string;
+  iconUrl?: string;
+  status: ServiceStatus;
+  createdAt: Date;
 }

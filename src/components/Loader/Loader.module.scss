@@ -1,0 +1,35 @@
+@use "@/scss/abstract" as *;
+@use "@/scss/base/animations" as *;
+
+.container {
+  @include flex-center;
+
+  width: 100%;
+  padding: 2rem;
+}
+
+.overlay {
+  @include flex-center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba($clr-bg-dark, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    $clr-primary 0deg,
+    $clr-secondary 360deg
+  );
+  mask: radial-gradient(farthest-side, transparent calc(100% - 6px), #000 0);
+  animation: rotate 1s linear infinite;
+}
