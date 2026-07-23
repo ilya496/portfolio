@@ -1,0 +1,36 @@
+name: Build and Deploy to GitHub Pages Repo
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies & Build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Push Build Output to .github.io Repo
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.AUTO_DEPLOY_TOKEN }}
+        with:
+          source-directory: 'dist' # Use 'build' if using Create React App
+          destination-github-username: 'ilya496'
+          destination-repository-name: 'ilya496.github.io'
+          user-email: 'birukov0608@gmail.com'
+          target-branch: 'main'
