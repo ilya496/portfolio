@@ -15,6 +15,8 @@ import HomePage from "./pages/HomePage.tsx";
 import Footer from "./widgets/Footer.tsx";
 import Sidebar from "./widgets/Sidebar.tsx";
 import FakeLoginPage from "./pages/FakeLoginPage.tsx";
+import ProjectsPage from "./pages/ProjectsPage.tsx";
+import ServicesPage from "./pages/ServicesPage.tsx";
 
 const ProtectedRoute = () => {
   const { user, isLoading } = useAuth();
@@ -72,8 +74,8 @@ const router = createBrowserRouter([
         children: [
           { index: true, element: <HomePage /> },
           { path: "login", element: <FakeLoginPage /> },
-          // { path: "projects", element: <ProjectsPage /> },
-          // { path: "services", element: <ServicesPage /> },
+          { path: "projects", element: <ProjectsPage /> },
+          { path: "services", element: <ServicesPage /> },
         ],
       },
       {

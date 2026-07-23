@@ -1,4 +1,4 @@
-import Button from "@/components/Button/Button";
+import Button from "@/components/Button";
 
 import starIcon from "@/assets/icons/star.svg";
 import { Link } from "react-router-dom";

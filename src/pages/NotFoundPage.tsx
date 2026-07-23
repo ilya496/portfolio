@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 
-import Button from "@/components/Button/Button";
+import Button from "@/components/Button";
 import StyledCode from "@/components/StyledCode";
 
 function NotFoundPage() {

@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./Button.module.scss";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "reverse" | "outline" | "icon";
@@ -14,7 +13,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      className={`${styles.btn} ${styles[variant]} ${className}`}
+      className={`btn btn--${variant}${className ? ` ${className}` : ""}`}
       {...props}
     >
       {children}

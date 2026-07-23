@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 
 import Logo from "@/components/Logo";
-import Avatar from "@/components/Avatar";
 
 import homeIcon from "@/assets/icons/home.svg";
+import Button from "@/components/Button";
 
 interface NavLink {
   to: string;
@@ -13,7 +13,7 @@ interface NavLink {
 const navLinks: NavLink[] = [
   { to: "/about", label: "About" },
   { to: "/services", label: "Hosted services" },
-  { to: "/portfolio", label: "Portfolio" },
+  { to: "/projects", label: "Projects" },
 ];
 
 function Header() {
@@ -45,7 +45,8 @@ function Header() {
 
           <div className="header__cta">
             <Link to="/login">
-              <Avatar />
+              {/* <Avatar > */}
+              <Button variant="outline">Login</Button>
             </Link>
           </div>
         </div>

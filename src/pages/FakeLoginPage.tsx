@@ -1,28 +1,6 @@
 import { useEffect, useState } from "react";
 
-import breadCat from "@/assets/images/cat-bread-bread-cat.gif";
-import warCat from "@/assets/images/cat-cat-war.gif";
-import catCute from "@/assets/images/cat-cute.gif";
-import catFunny from "@/assets/images/cat-funny.gif";
-import catHello from "@/assets/images/cat-hello.gif";
-import catKitty from "@/assets/images/cat-kitty.gif";
-import catOrange from "@/assets/images/cat-orange-cat.gif";
-import cuteCat from "@/assets/images/cute-cat.gif";
-import kittyCat from "@/assets/images/kitty-cat.gif";
-import workerKitty from "@/assets/images/kitty-worker-kitty.gif";
-import scubaCat from "@/assets/images/scuba-scuba-cat.gif";
-import wiggleCat from "@/assets/images/wiggle-cat-wiggle.gif";
-import porridgeCat from "@/assets/images/milk-cat-cat.gif";
-import watchingCat from "@/assets/images/cat1.gif";
-import sadCat from "@/assets/images/sad-cat-sad-cat-meme.gif";
-import eatingCat from "@/assets/images/cat-cat-eating.gif";
-import smirkingCat from "@/assets/images/kitty-angry-kitty.gif"
-import huhCat from "@/assets/images/huh-cat-huh-m4rtin.gif";
-import cryingCat from "@/assets/images/cat.gif";
-import moneyCat from "@/assets/images/elgatitolover-elgatitoloves.gif";
-import girlCat from "@/assets/images/cute-cat-cute.gif";
-import tongueCat from "@/assets/images/dil-atan-kedi.gif";
-
+import Button from "@/components/Button";
 
 interface CatItem {
   id: string;
@@ -31,28 +9,44 @@ interface CatItem {
 }
 
 const CAT_GALLERY: CatItem[] = [
-  { id: "cat-bread", src: breadCat, alt: "Cat in bread" },
-  { id: "cat-war", src: warCat, alt: "Cat war" },
-  { id: "cat-cute", src: catCute, alt: "Cute cat" },
-  { id: "cat-hello", src: catHello, alt: "Hello cat" },
-  { id: "cat-funny", src: catFunny, alt: "Funny cat" },
-  { id: "cat-kitty", src: catKitty, alt: "Kitty cat" },
-  { id: "cat-orange", src: catOrange, alt: "Orange cat" },
-  { id: "cute-cat", src: cuteCat, alt: "Another cute cat" },
-  { id: "kitty-cat", src: kittyCat, alt: "Kitty" },
-  { id: "kitty-worker", src: workerKitty, alt: "Worker cat" },
-  { id: "scuba-cat", src: scubaCat, alt: "Scuba cat" },
-  { id: "wiggle-cat", src: wiggleCat, alt: "Wiggle cat" },
-  { id: "porridge-cat", src: porridgeCat, alt: "Porridge cat" },
-  { id: "watching-cat", src: watchingCat, alt: "Watching cat" },
-  { id: "sad-cat", src: sadCat, alt: "Sad cat" },
-  { id: "eating-cat", src: eatingCat, alt: "Eating cat" },
-  { id: "smirking-cat", src: smirkingCat, alt: "Smirking cat" },
-  { id: "huh-cat", src: huhCat, alt: "Huh cat" },
-  { id: "crying-cat", src: cryingCat, alt: "Crying cat" },
-  { id: "money-cat", src: moneyCat, alt: "Money cat" },
-  { id: "girl-cat", src: girlCat, alt: "Girl cat" },
-  { id: "tongue-cat", src: tongueCat, alt: "Tongue cat" }
+  {
+    id: "cat-bread",
+    src: "/images/cat-bread-bread-cat.gif",
+    alt: "Cat in bread",
+  },
+  { id: "cat-war", src: "/images/cat-cat-war.gif", alt: "Cat war" },
+  { id: "cat-cute", src: "/images/cat-cute.gif", alt: "Cute cat" },
+  { id: "cat-hello", src: "/images/cat-hello.gif", alt: "Hello cat" },
+  { id: "cat-funny", src: "/images/cat-funny.gif", alt: "Funny cat" },
+  { id: "cat-kitty", src: "/images/cat-kitty.gif", alt: "Kitty cat" },
+  { id: "cat-orange", src: "/images/cat-orange-cat.gif", alt: "Orange cat" },
+  { id: "cute-cat", src: "/images/cute-cat.gif", alt: "Another cute cat" },
+  { id: "kitty-cat", src: "/images/kitty-cat.gif", alt: "Kitty" },
+  {
+    id: "kitty-worker",
+    src: "/images/kitty-worker-kitty.gif",
+    alt: "Worker cat",
+  },
+  { id: "scuba-cat", src: "/images/scuba-scuba-cat.gif", alt: "Scuba cat" },
+  { id: "wiggle-cat", src: "/images/wiggle-cat-wiggle.gif", alt: "Wiggle cat" },
+  { id: "porridge-cat", src: "/images/milk-cat-cat.gif", alt: "Porridge cat" },
+  { id: "watching-cat", src: "/images/cat1.gif", alt: "Watching cat" },
+  { id: "sad-cat", src: "/images/sad-cat-sad-cat-meme.gif", alt: "Sad cat" },
+  { id: "eating-cat", src: "/images/cat-cat-eating.gif", alt: "Eating cat" },
+  {
+    id: "smirking-cat",
+    src: "/images/kitty-angry-kitty.gif",
+    alt: "Smirking cat",
+  },
+  { id: "huh-cat", src: "/images/huh-cat-huh-m4rtin.gif", alt: "Huh cat" },
+  { id: "crying-cat", src: "/images/cat.gif", alt: "Crying cat" },
+  {
+    id: "money-cat",
+    src: "/images/elgatitolover-elgatitoloves.gif",
+    alt: "Money cat",
+  },
+  { id: "girl-cat", src: "/images/cute-cat-cute.gif", alt: "Girl cat" },
+  { id: "tongue-cat", src: "/images/dil-atan-kedi.gif", alt: "Tongue cat" },
 ];
 
 function FakeLoginPage() {
@@ -113,14 +107,13 @@ function FakeLoginPage() {
               role="dialog"
               aria-modal="true"
             >
-              <button
-                type="button"
+              <Button
                 className="lightbox__close"
                 onClick={() => setActiveImage(null)}
-                aria-label="Close full view"
+                variant="icon"
               >
                 &times;
-              </button>
+              </Button>
 
               <img
                 src={activeImage.src}
